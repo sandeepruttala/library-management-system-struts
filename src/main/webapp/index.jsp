@@ -6,22 +6,17 @@
     <meta charset="UTF-8">
     <title>Product Management</title>
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-image:url("https://media.licdn.com/dms/image/C5112AQHe-rQWyp9oAQ/article-cover_image-shrink_600_2000/0/1520186101479?e=2147483647&v=beta&t=g02oa16yh4ouMPXKqDM6gq4xjqrnyhvCTN_rAe9RvMA");
-            background-repeat: no-repeat;
-            background-attachment: fixed; 
-            background-size: 100% 100%;
         }
         h1 {
             color: #333;
             text-align: center;
             padding: 20px 0;
-            background-color: orange; /* Changed to orange */
+            background-color: #3498db;
             color: #fff;
             margin: 0;
         }
@@ -33,25 +28,25 @@
             margin: 0 10px;
             text-decoration: none;
             padding: 10px 20px;
-            background-color: orange; /* Changed to orange */
+            background-color: #3498db;
             color: #fff;
-            border: 1px solid #388E3C; /* Changed border color */
+            border: none;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
         .operation-links a:hover {
-            background-color: #FF8C00; /* Changed hover color */
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
-    <h1>Product Management</h1>
-    
-    <div class="operation-links">
-        <s:a href="addProduct.jsp">Add Product</s:a>
-        <s:a href="displayProducts.jsp">Display Products</s:a>
-        <s:a href="updateProduct.jsp">Update Product</s:a>
-        <s:a href="deleteProduct.jsp">Delete Product</s:a>
-    </div>
+<h1>Product Management</h1>
+
+<div class="operation-links">
+    <s:a href="addProduct.jsp">Add Product</s:a>
+    <s:a href="displayProducts.jsp">Display Products</s:a>
+    <s:a href="updateProduct.jsp">Update Product</s:a>
+    <s:a href="deleteProduct.jsp">Delete Product</s:a>
+</div>
 </body>
 </html>

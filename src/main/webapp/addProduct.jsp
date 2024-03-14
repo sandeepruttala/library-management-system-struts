@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Add Product</title>
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -16,7 +15,7 @@
             color: #333;
             text-align: center;
             padding: 20px 0;
-            background-color: orange; /* Changed to orange */
+            background-color: #3498db;
             color: #fff;
             margin: 0;
         }
@@ -46,7 +45,7 @@
             border-radius: 3px;
         }
         .form-group input[type="submit"] {
-            background-color: orange; /* Changed to orange */
+            background-color: #3498db;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -54,39 +53,39 @@
             cursor: pointer;
         }
         .form-group input[type="submit"]:hover {
-            background-color: #FF8C00; /* Changed hover color */
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
-    <h1>Add Product</h1>
+<h1>Add Product</h1>
 
-    <div class="form-container">
-        <form action="addProductAction" method="post">
-            <div class="form-group">
-                <label for="name">name:</label>
-                <input type="text" name="product.name" required />
-            </div>
-            <div class="form-group">
-                <label for="description">description:</label>
-                <input type="text" name="product.description" required />
-            </div>
-            <div class="form-group">
-                <label for="price">price:</label>
-                <input type="number" name="product.price" required />
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity:</label>
-                <input type="number" name="product.quantity" required />
-            </div>
-            <div class="form-group">
-                <label for="category">Category:</label>
-                <input type="text" name="product.category" required />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Add Product" />
-            </div>
-        </form>
-    </div>
+<div class="form-container">
+    <form action="addProductAction" method="post">
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="product.name" required />
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <input type="text" name="product.description" required />
+        </div>
+        <div class="form-group">
+            <label>Price:</label>
+            <input type="number" name="product.price" required />
+        </div>
+        <div class="form-group">
+            <label>Quantity:</label>
+            <input type="number" name="product.quantity" required />
+        </div>
+        <div class="form-group">
+            <label>Category:</label>
+            <input type="text" name="product.category" required />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add Product" />
+        </div>
+    </form>
+</div>
 </body>
 </html>

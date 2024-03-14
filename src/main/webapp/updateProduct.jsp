@@ -10,7 +10,6 @@
     <meta charset="UTF-8">
     <title>Update Product</title>
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -21,7 +20,7 @@
             color: #333;
             text-align: center;
             padding: 20px 0;
-            background-color: orange; /* Changed to orange */
+            background-color: #3498db;
             color: #fff;
             margin: 0;
         }
@@ -41,32 +40,30 @@
         form {
             width: 50%;
             margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        label {
+        .form-group {
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .form-group label {
             display: block;
+            font-weight: bold;
             margin-bottom: 5px;
         }
-        input {
+        .form-group input[type="text"], .form-group input[type="number"] {
             width: 100%;
             padding: 8px;
-            margin-bottom: 10px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 3px;
         }
-        button {
-            padding: 10px;
-            background-color: orange; /* Changed to orange */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #FF8C00; /* Changed hover color */
-        }
         .form-group input[type="submit"] {
-            background-color: orange;
+            background-color: #3498db;
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -74,89 +71,85 @@
             cursor: pointer;
         }
         .form-group input[type="submit"]:hover {
-            background-color: #FF8C00;
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
-	<h1>List of Articles</h1>
-    
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>category</th>
-        </tr>
-        
-        <% 
-   
-            Session session1 = FactoryProvider.getFactory().openSession();
-            
-            try {
-                session1.beginTransaction();
-                List<Product> products = session1.createQuery("from Product").getResultList();
-                
-                for (Product i : products) {
-        %>
-                <tr>
-                    <td><%= i.getId() %></td>
-                    <td><%= i.getName() %></td>
-                    <td><%= i.getDescription() %></td>
-                    <td><%= i.getPrice() %></td>
-                    <td><%= i.getQuantity() %></td>
-                    <td><%= i.getCategory() %></td>
-                </tr>
-        <%
-                }
-                session1.getTransaction().commit();
-            } finally {
-                if (session1 != null && session1.isOpen()) {
-                    session1.close();
-                }
+<h1>List of Products</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>category</th>
+    </tr>
+
+    <%
+
+        Session session1 = FactoryProvider.getFactory().openSession();
+
+        try {
+            session1.beginTransaction();
+            List<Product> products = session1.createQuery("from Product").getResultList();
+
+            for (Product i : products) {
+    %>
+    <tr>
+        <td><%= i.getId() %></td>
+        <td><%= i.getName() %></td>
+        <td><%= i.getDescription() %></td>
+        <td><%= i.getPrice() %></td>
+        <td><%= i.getQuantity() %></td>
+        <td><%= i.getCategory() %></td>
+    </tr>
+    <%
             }
-        %>
-    </table>
-    
-   
-    <div class="container">
-        <a href="index.jsp" class="btn">Home</a>
+            session1.getTransaction().commit();
+        } finally {
+            if (session1 != null && session1.isOpen()) {
+                session1.close();
+            }
+        }
+    %>
+</table>
+
+<div class="container">
+    <a href="index.jsp" class="btn">Home</a>
+</div>
+<h1>Update Product</h1>
+
+<form action="UpdateProductAction" method="post">
+    <div class="form-group">
+        <label for="id">Product ID:</label>
+        <input type="text" id="id" name="id" required />
     </div>
-    <h1>Update Product</h1>
-    
-    <form action="UpdateProductAction" method="post">
-    	<div class="form-group">
-               <label for="id">id:</label>
-               <input type="text" name="id" required />
-           </div>
-       	<div class="form-group">
-                <label for="name">name:</label>
-                <input type="text" name="product.name" required />
-            </div>
-            <div class="form-group">
-                <label for="description">description:</label>
-                <input type="text" name="product.description" required />
-            </div>
-            <div class="form-group">
-                <label for="price">price:</label>
-                <input type="number" name="product.price" required />
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity:</label>
-                <input type="number" name="product.quantity" required />
-            </div>
-            <div class="form-group">
-                <label for="category">Category:</label>
-                <input type="text" name="product.category" required />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Update Product" />
-            </div>
-    </form>
-    
-    
-    
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="product.name" required />
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="product.description" required />
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="product.price" required />
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="product.quantity" required />
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="product.category" required />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Update Product" />
+    </div>
+</form>
 </body>
 </html>
