@@ -1,66 +1,83 @@
-*{
+* {
   box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    margin-top: 20px;
-  background-color: #f4f4f4;
-    text-align: center;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+body {
+  margin-top: 20px;
+  background-color: #121212; /* Dark theme background */
+  color: #e0e0e0; /* Light text color for contrast */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Improved font readability */
 }
 
-h1{
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: wheat; /* Soft purple for headings */
 }
 
-table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: #333; /* Darker background for table */
+  color: #e0e0e0; /* Light text color for table content */
 }
 
-th, td{
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #555; /* Softer line color */
 }
 
-th{
-    background-color: #f4f4f4;
+th {
+  background-color: #222; /* Even darker shade for headers */
+  color: #ffab91; /* Soft coral for header text */
 }
 
-input[type="text"], input[type="number"]{
-    padding: 0.5rem;
-    width: 300px;
-    margin-bottom: 1rem;
+input[type="text"], input[type="number"] {
+  padding: 0.5rem;
+  width: 300px;
+  margin-bottom: 1rem;
+  background-color: #333; /* Dark input backgrounds */
+  color: #e0e0e0; /* Light input text */
+  border: 1px solid #555; /* Softer border */
+  border-radius: 5px;
 }
 
-button{
-    padding: 1rem;
-    background-color: #f4f4f4;
-    border: none;
-    cursor: pointer;
+button {
+  padding: 1rem;
+  background-color: #333; /* Dark theme buttons */
+  border: 1px solid #444; /* Slightly lighter border for definition */
+  cursor: pointer;
+  color: #e0e0e0; /* Light text for buttons */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-button:hover{
-    background-color: #ddd;
+button:hover {
+  background-color: #444; /* Lighter shade on hover */
 }
 
-a{
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    width: fit-content;
-    color: white;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    background-color: cornflowerblue;
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  color: wheat; /* Matching the headings for consistency */
+  margin: 0.5rem auto; /* Center align links */
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #333; /* Dark background for links */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+a:hover {
+  background-color: #444; /* Lighter shade on hover */
 }
